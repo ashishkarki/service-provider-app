@@ -1,0 +1,38 @@
+{
+  "name": "service-provider-app",
+  "version": "1.0.0",
+  "description": "Service provider app using node/express and react on the frontend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "serve": "nodemon server",
+    "dev_serve": "npx cross-env NODE_ENV=development nodemon server",
+    "client": "npm start --prefix service-provider-web",
+    "dev": "concurrently \"npx cross-env NODE_ENV=development nodemon server\" \"npm run client\"",
+    "test": "snyk test"
+  },
+  "keywords": [
+    "service-provider",
+    "api",
+    "app",
+    "web-app",
+    "node",
+    "express",
+    "react",
+    "ui"
+  ],
+  "author": "ashish karki",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.17.1",
+    "faker": "^5.5.0",
+    "helmet": "^4.4.1",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7",
+    "snyk": "^1.511.0"
+  }
+}
