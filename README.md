@@ -1,0 +1,3 @@
+## Full-stack React + Node/Express app to allow users to list their skills and get corresponding service requests from clients
+
+### More details coming soon............

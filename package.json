@@ -25,6 +25,7 @@
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
+    "config": "^3.3.6",
     "express": "^4.17.1",
     "faker": "^5.5.0",
     "helmet": "^4.4.1",

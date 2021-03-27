@@ -22,14 +22,14 @@ const createSkillsArray = () => {
   return skillsArray
 }
 
-const createServiceRequests = () => {
+const createSrvRequestMaps = () => {
   const srvRequestMaps = []
 
   for (let i = 0; i < NUM_SERVICE_REQUESTS; i++) {
     const clientId = faker.random.alphaNumeric(6)
     const clientFullName = faker.name.firstName() + ' ' + faker.name.lastName()
 
-    const srvRequirementDesc = faker.lorem.sentences()
+    const srvRequirementDesc = faker.lorem.sentences(2)
 
     const soon = faker.date.soon()
     const serviceStartDate = moment(soon).format(DATE_FORMAT)
@@ -53,7 +53,7 @@ const createServiceRequests = () => {
 
 const createFakeData = () => {
   const skillsArray = createSkillsArray()
-  const srvRequestMaps = createServiceRequests()
+  const srvRequestMaps = createSrvRequestMaps()
 
   console.log('skillsArray:', skillsArray)
   console.log('srvRequestMaps', srvRequestMaps)
@@ -61,4 +61,6 @@ const createFakeData = () => {
 
 module.exports = {
   createFakeData,
+  createSkillsArray,
+  createSrvRequestMaps,
 }

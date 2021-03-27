@@ -1,9 +1,10 @@
 const express = require('express')
+const { getAllSkills, getSrvRequestMaps } = require('../controllers/services')
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  res.send('hello from services route')
-})
+router.route('/skills').get(getAllSkills)
+
+router.route('/requests').post(getSrvRequestMaps)
 
 module.exports = router

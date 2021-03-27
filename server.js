@@ -11,14 +11,11 @@ const {
 const servicesRoute = require('./routes/services')
 const { createFakeData } = require('./fake/fake-client-requests')
 
-// generating data to use in the frontend
-createFakeData()
-
 // the app
 const app = express()
 
 // MIDDLEWARES
-app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 app.use(helmet())
 // END OF MIDDLEWARES
 
