@@ -53,7 +53,10 @@ exports.getSrvRequestMaps = async (req, res, next) => {
 }
 
 const randomizer = array => {
-  const randomIndex = Math.floor(Math.random() * array.length)
+  // generate a random number between min and max, not including max
+  const min = 0
+  const max = array.length
+  const randomIndex = Math.floor(Math.random() * (max - min) + min)
 
   return array[randomIndex]
 }
