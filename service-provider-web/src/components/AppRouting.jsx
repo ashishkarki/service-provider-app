@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Error from './pages/Error'
-import Home from './pages/Home'
-import SkillsSelection from './pages/SkillsSelection'
-import { ROUTING_PATHS } from './constants'
-import AppNavigation from './components/AppNavigation'
+import Error from '../pages/Error'
+import Home from '../pages/Home'
+import SkillsSelection from '../pages/SkillsSelection'
+import { ROUTING_PATHS } from '../constants'
+import AppNavigation from './AppNavigation'
 
-const Routing = () => {
+const AppRouting = () => {
   return (
     <Router>
       <Switch>
@@ -28,4 +28,4 @@ const Routing = () => {
   )
 }
 
-export default Routing
+export default AppRouting

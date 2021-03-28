@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import AppButton from '../components/AppButton'
-import { useGlobalContext } from '../globalContext'
+import { useGlobalContext } from '../GlobalContext'
 import { ROUTING_PATHS } from '../constants'
 
 const Home = () => {

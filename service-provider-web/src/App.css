@@ -6,7 +6,35 @@
   text-align: center;
 }
 
-.form {
+/* Styles directly from ant design site: to style the Layout component */
+.site-layout-content {
+  min-height: 280px;
+  padding: 1.5rem;
+  background: #fff;
+}
+
+.logo {
+  color: antiquewhite;
+}
+
+.ant-row-rtl .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+[data-theme='dark'] .site-layout-content {
+  background: #141414;
+}
+/* DONE: styles from Ant Design */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* .form {
   min-height: 70vh;
   border: 2px lightsalmon groove;
   position: relative;
@@ -23,4 +51,4 @@
   margin: 1rem 10% 1rem 80%;
   position: absolute;
   bottom: 0;
-}
+} */
