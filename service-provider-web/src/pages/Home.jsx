@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import AppButton from '../components/AppButton'
 import { useGlobalContext } from '../globalContext'
+import { ROUTING_PATHS } from '../constants'
 
 const Home = () => {
   const { setProviderName } = useGlobalContext()
@@ -31,6 +32,7 @@ const Home = () => {
           label='Start'
           submitHandler={nameSubmitHandler}
           isDisabled={!name || name.length <= 0}
+          linkTo={ROUTING_PATHS.SKILLS_SELECTION}
         />
       </form>
     </main>
