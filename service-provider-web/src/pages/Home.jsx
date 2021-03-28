@@ -27,13 +27,13 @@ const Home = () => {
           value={name}
           onChange={e => setName(e.target.value)}
         />
-
+        {/*
         <AppButton
           label='Start'
           submitHandler={nameSubmitHandler}
           isDisabled={!name || name.length <= 0}
           linkTo={ROUTING_PATHS.SKILLS_SELECTION}
-        />
+        /> */}
       </form>
     </main>
   )

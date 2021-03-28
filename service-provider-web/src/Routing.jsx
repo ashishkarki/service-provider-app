@@ -4,6 +4,7 @@ import Error from './pages/Error'
 import Home from './pages/Home'
 import SkillsSelection from './pages/SkillsSelection'
 import { ROUTING_PATHS } from './constants'
+import AppNavigation from './components/AppNavigation'
 
 const Routing = () => {
   return (
@@ -21,6 +22,8 @@ const Routing = () => {
           <Error />
         </Route>
       </Switch>
+
+      <AppNavigation />
     </Router>
   )
 }

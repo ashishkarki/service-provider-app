@@ -6,7 +6,15 @@ const ROUTING_PATHS = {
   SKILLS_RATING: '/rating',
 }
 
+const ALERT_TYPES = {
+  SUCCESS: 'success',
+  INFO: 'info',
+  WARNING: 'warning',
+  ERROR: 'error',
+}
+
 module.exports = {
   API_BASE_URI,
   ROUTING_PATHS,
+  ALERT_TYPES,
 }
