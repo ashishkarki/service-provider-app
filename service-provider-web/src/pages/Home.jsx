@@ -19,7 +19,7 @@ const Home = () => {
 
       <form className='form' onSubmit={nameSubmitHandler}>
         <label htmlFor='providerName' className='input-label'>
-          Enter your name to start:{' '}
+          Enter your name to start:
         </label>
         <input
           type='text'

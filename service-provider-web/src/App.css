@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@1,500&display=swap');
 
+body {
+  box-sizing: border-box;
+}
+
 .App {
   font-family: 'Brygada 1918', serif;
   font-size: 1.3rem;
@@ -8,7 +12,10 @@
 
 /* Styles directly from ant design site: to style the Layout component */
 .site-layout-content {
-  min-height: 280px;
+  display: grid;
+
+  min-height: 65vh;
+  /* 280px; */
   padding: 1.5rem;
   background: #fff;
 }
@@ -34,6 +41,16 @@
   width: 100%;
 }
 
+.input-label {
+  display: block;
+}
+
+.app-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* .form {
   min-height: 70vh;
   border: 2px lightsalmon groove;
@@ -41,9 +58,6 @@
   padding: 2rem;
 }
 
-.input-label {
-  display: block;
-}
 
 .app-button {
   display: block;

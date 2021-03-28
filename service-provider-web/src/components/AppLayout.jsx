@@ -3,6 +3,7 @@ import 'antd/dist/antd.css'
 import { Layout } from 'antd'
 import { ProfileOutlined } from '@ant-design/icons'
 import AppRouting from './AppRouting'
+import AppNavigation from './AppNavigation'
 
 const { Header, Content, Footer } = Layout
 
@@ -21,7 +22,10 @@ const AppLayout = () => {
         </div>
       </Content>
 
-      <Footer className='footer'>Built by Ashish Karki</Footer>
+      <Footer className='footer'>
+        Built by Ashish Karki. <br />
+        Made with ❤ in Nepal.
+      </Footer>
     </Layout>
   )
 }
