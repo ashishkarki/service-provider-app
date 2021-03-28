@@ -3,7 +3,7 @@ const NODE_ENV_OPTIONS = {
   PROD: 'production',
 }
 
-const EXPRESS_DEFAULT_PORT = 5001
+const EXPRESS_DEFAULT_PORT = 5000
 
 const API_BASE_URI = '/api/v1/services'
 
