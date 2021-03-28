@@ -2,6 +2,8 @@ import axios from 'axios'
 import React, { useEffect } from 'react'
 import { API_BASE_URI } from './constants'
 import './App.css'
+import Routing from './Routing'
+import { GlobalProvider } from './globalContext'
 
 function App() {
   const getAllSkills = async () => {
@@ -24,7 +26,13 @@ function App() {
     }
   }, [])
 
-  return <div className='App'>hello service providers</div>
+  return (
+    <div className='App'>
+      <GlobalProvider>
+        <Routing />
+      </GlobalProvider>
+    </div>
+  )
 }
 
 export default App

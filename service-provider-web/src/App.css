@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@1,500&display=swap');
+
 .App {
+  font-family: 'Brygada 1918', serif;
+  font-size: 1.3rem;
   text-align: center;
+}
+
+.form {
+  min-height: 70vh;
+  border: 2px lightsalmon groove;
+  position: relative;
+  padding: 2rem;
+}
+
+.input-label {
+  display: block;
+}
+
+.app-button {
+  display: block;
+  font-size: 1.5rem;
+  margin: 1rem 10% 1rem 80%;
+  position: absolute;
+  bottom: 0;
 }
