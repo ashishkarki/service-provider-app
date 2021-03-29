@@ -7,8 +7,8 @@ const GlobalProvider = ({ children }) => {
   const [providerName, setProviderName] = useState('')
   const [skillOptions, setSkillOptions] = useState([])
   const [selectedSkillOptions, setSelectedSkillOptions] = useState([])
-
-  const navigationParamInitState = {}
+  const [skillRatingMap, setSkillRatingMap] = useState({})
+  const [skillRatingsMap, setSkillRatingsMap] = useState(new Map())
 
   const [isBackBtnDisabled, setIsBackBtnDisabled] = useState(true)
   const [isNextBtnDisabled, setIsNextBtnDisabled] = useState(false)
@@ -30,14 +30,6 @@ const GlobalProvider = ({ children }) => {
     setNextBtnAction(nextBtnAction)
   }
 
-  const resetAppNavigationParameters = () => {
-    setIsBackBtnDisabled(isBackBtnDisabled)
-    setIsNextBtnDisabled(isNextBtnDisabled)
-    setBackBtnLabel(backBtnLabel)
-    setNextBtnLabel(nextBtnLabel)
-    setNextBtnAction(nextBtnAction)
-  }
-
   return (
     <GlobalContext.Provider
       value={{
@@ -49,7 +41,11 @@ const GlobalProvider = ({ children }) => {
         nextBtnAction,
         selectedSkillOptions,
         skillOptions,
+        skillRatingMap,
+        skillRatingsMap,
 
+        setSkillRatingsMap,
+        setSkillRatingMap,
         setSkillOptions,
         setSelectedSkillOptions,
         setProviderName,
