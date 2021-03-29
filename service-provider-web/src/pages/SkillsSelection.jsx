@@ -1,15 +1,19 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Checkbox } from 'antd'
 import axios from 'axios'
-import { API_BASE_URI, ALERT_TYPES } from '../constants'
+import { API_BASE_URI, ROUTING_PATHS } from '../constants'
 import AppAlert from '../components/AppAlert'
+import { useGlobalContext } from '../GlobalContext'
 
 const SkillsSelection = () => {
+  const { setAppNavigationParameters } = useGlobalContext()
   const [skillOptions, setSkillOptions] = useState([])
+  const [selectedSkillOptions, setSelectedSkillOptions] = useState([])
   const [errorMsg, setErrorMsg] = useState('')
 
   const onCheckboxesChange = checkedValues => {
-    console.log('checked = ', checkedValues)
+    console.log('checked options = ', checkedValues)
+    setSelectedSkillOptions(checkedValues)
   }
 
   const getAllSkills = useCallback(async () => {
@@ -33,6 +37,16 @@ const SkillsSelection = () => {
     }
   }, [getAllSkills])
 
+  useEffect(() => {
+    const flag = selectedSkillOptions.length <= 2 ? true : false
+
+    setAppNavigationParameters({
+      isBackBtnDisabled: false,
+      isNextBtnDisabled: flag,
+      nextBtnAction: ROUTING_PATHS.SKILLS_RATING,
+    })
+  }, [selectedSkillOptions, setAppNavigationParameters])
+
   return (
     <section>
       <h2>Please select at least 3 skills below</h2>
@@ -41,6 +55,7 @@ const SkillsSelection = () => {
         <AppAlert />
       ) : (
         <Checkbox.Group
+          className='skills-checkbox-group'
           options={skillOptions}
           defaultValue={['Apple']}
           onChange={onCheckboxesChange}
