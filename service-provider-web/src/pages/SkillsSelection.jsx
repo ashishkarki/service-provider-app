@@ -31,7 +31,7 @@ const SkillsSelection = () => {
       //   console.log(`There was an error: ${error.message}`)
       setErrorMsg(error.message)
     }
-  }, [])
+  }, [setSkillOptions])
 
   useEffect(() => {
     if (selectedSkillOptions.length <= 0) {
@@ -43,7 +43,7 @@ const SkillsSelection = () => {
         axiosSrc.cancel()
       }
     }
-  }, [getAllSkills])
+  }, [selectedSkillOptions.length, getAllSkills])
 
   useEffect(() => {
     const flag = selectedSkillOptions.length <= 2 ? true : false

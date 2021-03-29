@@ -1,9 +1,11 @@
 import React from 'react'
 import { InputNumber } from 'antd'
 
-const AppRating = ({ skillName, skillIndex }) => {
-  console.log(skillName, skillIndex)
-  const onChange = () => {}
+const AppRating = ({ skillName, onInputValueChange }) => {
+  const onChange = newValue => {
+    onInputValueChange(skillName, newValue)
+  }
+
   return (
     <div
       style={{
