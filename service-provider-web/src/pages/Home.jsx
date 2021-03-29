@@ -3,24 +3,26 @@ import { useGlobalContext } from '../GlobalContext'
 import { ROUTING_PATHS } from '../constants'
 
 const Home = () => {
-  const { setProviderName, setAppNavigationParameters } = useGlobalContext()
-
-  const [name, setName] = useState('')
+  const {
+    providerName,
+    setProviderName,
+    setAppNavigationParams,
+  } = useGlobalContext()
 
   const nameSubmitHandler = e => {
     e.preventDefault()
 
-    setProviderName(name)
+    //setProviderName(name)
   }
 
   useEffect(() => {
-    const flag = name.length <= 0 ? true : false
+    const flag = providerName.length <= 0 ? true : false
 
-    setAppNavigationParameters({
+    setAppNavigationParams({
       isNextBtnDisabled: flag,
       nextBtnAction: ROUTING_PATHS.SKILLS_SELECTION,
     })
-  }, [name, setAppNavigationParameters])
+  }, [providerName, setAppNavigationParams])
 
   return (
     <main>
@@ -33,8 +35,8 @@ const Home = () => {
         <input
           type='text'
           id='providerName'
-          value={name}
-          onChange={e => setName(e.target.value)}
+          value={providerName}
+          onChange={e => setProviderName(e.target.value)}
         />
       </form>
     </main>

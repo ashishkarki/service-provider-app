@@ -6,9 +6,15 @@ import AppAlert from '../components/AppAlert'
 import { useGlobalContext } from '../GlobalContext'
 
 const SkillsSelection = () => {
-  const { setAppNavigationParameters } = useGlobalContext()
-  const [skillOptions, setSkillOptions] = useState([])
-  const [selectedSkillOptions, setSelectedSkillOptions] = useState([])
+  const {
+    selectedSkillOptions,
+    skillOptions,
+
+    setSkillOptions,
+    setAppNavigationParams,
+    setSelectedSkillOptions,
+  } = useGlobalContext()
+
   const [errorMsg, setErrorMsg] = useState('')
 
   const onCheckboxesChange = checkedValues => {
@@ -28,24 +34,26 @@ const SkillsSelection = () => {
   }, [])
 
   useEffect(() => {
-    const axiosSrc = axios.CancelToken.source()
+    if (selectedSkillOptions.length <= 0) {
+      const axiosSrc = axios.CancelToken.source()
 
-    getAllSkills()
+      getAllSkills()
 
-    return () => {
-      axiosSrc.cancel()
+      return () => {
+        axiosSrc.cancel()
+      }
     }
   }, [getAllSkills])
 
   useEffect(() => {
     const flag = selectedSkillOptions.length <= 2 ? true : false
 
-    setAppNavigationParameters({
+    setAppNavigationParams({
       isBackBtnDisabled: false,
       isNextBtnDisabled: flag,
       nextBtnAction: ROUTING_PATHS.SKILLS_RATING,
     })
-  }, [selectedSkillOptions, setAppNavigationParameters])
+  }, [selectedSkillOptions, setAppNavigationParams])
 
   return (
     <section>
@@ -57,7 +65,7 @@ const SkillsSelection = () => {
         <Checkbox.Group
           className='skills-checkbox-group'
           options={skillOptions}
-          defaultValue={['Apple']}
+          defaultValue={selectedSkillOptions}
           onChange={onCheckboxesChange}
         />
       )}

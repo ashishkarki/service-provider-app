@@ -11,7 +11,9 @@ const AppLayout = () => {
     <Layout className='layout'>
       <Header>
         <div className='logo'>
-          <ProfileOutlined /> Service Provider App
+          <a href='/'>
+            <ProfileOutlined /> Service Provider App
+          </a>
         </div>
       </Header>
 
