@@ -13,8 +13,14 @@ const ALERT_TYPES = {
   ERROR: 'error',
 }
 
+const BUTTON_LABELS = {
+  BACK: 'Back',
+  NEXT: 'Next',
+}
+
 module.exports = {
   API_BASE_URI,
   ROUTING_PATHS,
   ALERT_TYPES,
+  BUTTON_LABELS,
 }

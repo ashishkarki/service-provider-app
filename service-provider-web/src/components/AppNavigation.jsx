@@ -2,9 +2,17 @@ import React from 'react'
 import { Button } from 'antd'
 import { DoubleLeftOutlined, DoubleRightOutlined } from '@ant-design/icons'
 import { useHistory } from 'react-router-dom'
-import { ROUTING_PATHS } from '../constants'
+import { useGlobalContext } from '../GlobalContext'
 
 const AppNavigation = () => {
+  const {
+    isBackBtnDisabled,
+    isNextBtnDisabled,
+    backBtnLabel,
+    nextBtnLabel,
+    nextBtnAction,
+  } = useGlobalContext()
+
   const history = useHistory()
 
   return (
@@ -15,9 +23,9 @@ const AppNavigation = () => {
         icon={<DoubleLeftOutlined />}
         size='default'
         onClick={() => history.goBack()}
-        disabled={history.length < 2}
+        disabled={isBackBtnDisabled}
       >
-        Back
+        {backBtnLabel ? backBtnLabel : 'Back'}
       </Button>
 
       <Button
@@ -25,9 +33,10 @@ const AppNavigation = () => {
         shape='round'
         icon={<DoubleRightOutlined />}
         size='default'
-        onClick={() => history.push(ROUTING_PATHS.SKILLS_SELECTION)}
+        onClick={() => history.push(nextBtnAction)}
+        disabled={isNextBtnDisabled}
       >
-        Next
+        {nextBtnLabel ? nextBtnLabel : 'Next'}
       </Button>
     </div>
   )
