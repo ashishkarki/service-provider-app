@@ -51,23 +51,9 @@ body {
   justify-content: space-between;
 }
 
-.skills-checkbox-group {
+.app-grid-box {
   display: grid !important;
   grid-template-columns: auto auto;
+  gap: 5px;
+  text-transform: capitalize;
 }
-
-/* .form {
-  min-height: 70vh;
-  border: 2px lightsalmon groove;
-  position: relative;
-  padding: 2rem;
-}
-
-
-.app-button {
-  display: block;
-  font-size: 1.5rem;
-  margin: 1rem 10% 1rem 80%;
-  position: absolute;
-  bottom: 0;
-} */

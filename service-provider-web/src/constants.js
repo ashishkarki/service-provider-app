@@ -4,6 +4,7 @@ const ROUTING_PATHS = {
   HOME_ROOT: '/',
   SKILLS_SELECTION: '/skills',
   SKILLS_RATING: '/rating',
+  SERVICE_REQUESTS: '/requests',
 }
 
 const ALERT_TYPES = {

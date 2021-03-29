@@ -63,7 +63,7 @@ const SkillsSelection = () => {
         <AppAlert />
       ) : (
         <Checkbox.Group
-          className='skills-checkbox-group'
+          className='app-grid-box'
           options={skillOptions}
           defaultValue={selectedSkillOptions}
           onChange={onCheckboxesChange}

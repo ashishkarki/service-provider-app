@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useGlobalContext } from '../GlobalContext'
 import { ROUTING_PATHS } from '../constants'
 
@@ -11,8 +11,6 @@ const Home = () => {
 
   const nameSubmitHandler = e => {
     e.preventDefault()
-
-    //setProviderName(name)
   }
 
   useEffect(() => {
