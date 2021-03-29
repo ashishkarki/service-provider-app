@@ -5,6 +5,7 @@ import Home from '../pages/Home'
 import SkillsSelection from '../pages/SkillsSelection'
 import { ROUTING_PATHS } from '../constants'
 import AppNavigation from './AppNavigation'
+import SkillsRating from '../pages/SkillsRating'
 
 const AppRouting = () => {
   return (
@@ -16,6 +17,10 @@ const AppRouting = () => {
 
         <Route path={ROUTING_PATHS.SKILLS_SELECTION}>
           <SkillsSelection />
+        </Route>
+
+        <Route path={ROUTING_PATHS.SKILLS_RATING}>
+          <SkillsRating />
         </Route>
 
         <Route path='*'>

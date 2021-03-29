@@ -51,6 +51,11 @@ body {
   justify-content: space-between;
 }
 
+.skills-checkbox-group {
+  display: grid !important;
+  grid-template-columns: auto auto;
+}
+
 /* .form {
   min-height: 70vh;
   border: 2px lightsalmon groove;
