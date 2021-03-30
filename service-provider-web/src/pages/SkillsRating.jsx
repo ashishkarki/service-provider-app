@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect } from 'react'
 import { useGlobalContext } from '../GlobalContext'
 import AppRating from '../components/AppRating'
 import { ROUTING_PATHS } from '../constants'

@@ -19,9 +19,16 @@ const BUTTON_LABELS = {
   NEXT: 'Next',
 }
 
+const POST_REQUEST_COFIG = {
+  headers: {
+    'Content-Type': 'application/json',
+  },
+}
+
 module.exports = {
   API_BASE_URI,
   ROUTING_PATHS,
   ALERT_TYPES,
   BUTTON_LABELS,
+  POST_REQUEST_COFIG,
 }
