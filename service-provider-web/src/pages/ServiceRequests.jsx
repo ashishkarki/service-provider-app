@@ -42,7 +42,7 @@ const SRV_REQUESTS_TABLE_COLS = [
   {
     title: 'Action',
     key: 'action',
-    render: (text, record) => (
+    render: () => (
       <Space size='middle'>
         <Button type='default'>Accept</Button>
 

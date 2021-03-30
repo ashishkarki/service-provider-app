@@ -8,7 +8,7 @@ const SkillsRating = () => {
     selectedSkillOptions,
     skillRatingsMap,
 
-    setSkillRatingsMap,
+    // setSkillRatingsMap,
     setAppNavigationParams,
   } = useGlobalContext()
 
@@ -29,7 +29,7 @@ const SkillsRating = () => {
     })
 
     return () => {}
-  }, [selectedSkillOptions, setAppNavigationParams])
+  }, [skillRatingsMap, selectedSkillOptions, setAppNavigationParams])
 
   return (
     <section>
