@@ -5,6 +5,7 @@ const {
   NUM_TOTAL_SKILLS,
   NUM_SERVICE_REQUESTS,
 } = require('../utils/constants')
+const { randomizer } = require('../utils/utilities')
 
 const createSkillsArray = () => {
   const skillsArray = []
@@ -32,9 +33,10 @@ const createSrvRequestMaps = () => {
     const srvRequirementDesc = faker.lorem.sentences(2)
 
     const soon = faker.date.soon()
-    const serviceStartDate = moment(soon).format(DATE_FORMAT)
-
     const future = faker.date.future()
+    const soonAfter = faker.date.between(soon, future)
+
+    const serviceStartDate = moment(soonAfter).format(DATE_FORMAT)
     const serviceEndDate = moment(future).format(DATE_FORMAT)
 
     const serviceRequest = {
@@ -48,7 +50,26 @@ const createSrvRequestMaps = () => {
     srvRequestMaps.push(serviceRequest)
   }
 
-  return srvRequestMaps
+  // fulfill a requirement that any two requests have the same start-date
+  // get two items from srvRequestMaps array and set one start date to another's
+  const randomlySelectedReqMap1 = randomizer(srvRequestMaps)
+  let randomlySelectedReqMap2 = {}
+  do {
+    randomlySelectedReqMap2 = randomizer(srvRequestMaps)
+  } while (
+    randomlySelectedReqMap1.clientId === randomlySelectedReqMap2.clientId
+  )
+
+  // duplicate the startdaate
+  const duplicatedSrvRequestMaps = srvRequestMaps.map(reqMap => {
+    if (reqMap.clientId === randomlySelectedReqMap2.clientId) {
+      reqMap.serviceStartDate = randomlySelectedReqMap1.serviceStartDate
+    }
+
+    return reqMap
+  })
+
+  return duplicatedSrvRequestMaps
 }
 
 /**
