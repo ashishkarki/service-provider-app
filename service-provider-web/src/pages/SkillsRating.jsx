@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect } from 'react'
 import { useGlobalContext } from '../GlobalContext'
 import AppRating from '../components/AppRating'
 import { ROUTING_PATHS } from '../constants'
@@ -8,7 +8,7 @@ const SkillsRating = () => {
     selectedSkillOptions,
     skillRatingsMap,
 
-    setSkillRatingsMap,
+    // setSkillRatingsMap,
     setAppNavigationParams,
   } = useGlobalContext()
 
@@ -29,7 +29,7 @@ const SkillsRating = () => {
     })
 
     return () => {}
-  }, [selectedSkillOptions, setAppNavigationParams])
+  }, [skillRatingsMap, selectedSkillOptions, setAppNavigationParams])
 
   return (
     <section>
