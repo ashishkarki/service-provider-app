@@ -51,6 +51,9 @@ const createSrvRequestMaps = () => {
   return srvRequestMaps
 }
 
+/**
+ * For debugging and testing of generated fake data
+ */
 const createFakeData = () => {
   const skillsArray = createSkillsArray()
   const srvRequestMaps = createSrvRequestMaps()
