@@ -129,7 +129,8 @@ Keep in mind, we have two apps within the whole app: a react frontend and a expr
 
 There are can be a big bucket list but some of the more important ones to make the app more practical and useful are follows:
 
-## to be added soon
+1. The Service Requests page (currently the last page) is missing some required functionality like (a) user is allowed to click accept on all rows even those with duplicated start date (b) clicking on the Accept or Reject buttons doesn't do anything.
+2. When you go back from Service Requests (last) page to Skills Ratings page, the state of ratings isn't persisted. A proper use and configuration around useEffect hook is required for this as far as I can see at this point.
 
 ## <u>Feedback and Contact</u>
 

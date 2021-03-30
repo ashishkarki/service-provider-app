@@ -55,7 +55,11 @@ const SRV_REQUESTS_TABLE_COLS = [
 ]
 
 function ServiceRequests() {
-  const { skillRatingsMap, setAppNavigationParams } = useGlobalContext()
+  const {
+    providerName,
+    skillRatingsMap,
+    setAppNavigationParams,
+  } = useGlobalContext()
   const [errorMsg, setErrorMsg] = useState('')
   const [srvRequestMaps, setSrvRequestMaps] = useState([])
   const [requestLoading, setRequestLoading] = useState(true)
@@ -114,7 +118,20 @@ function ServiceRequests() {
 
   return (
     <section>
-      <h2>Cheers!! Here is list of matching Service Requests</h2>
+      <h2>
+        Hey{' '}
+        <span
+          style={{
+            fontWeight: 'bolder',
+            fontStyle: 'italic',
+            textDecoration: 'underline double',
+            textTransform: 'uppercase',
+          }}
+        >
+          {providerName}
+        </span>
+        , here is list of matching Service Requests personalized for you..
+      </h2>
 
       {errorMsg && errorMsg.length !== '' ? (
         <AppAlert />
