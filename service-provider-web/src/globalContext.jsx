@@ -7,7 +7,6 @@ const GlobalProvider = ({ children }) => {
   const [providerName, setProviderName] = useState('')
   const [skillOptions, setSkillOptions] = useState([])
   const [selectedSkillOptions, setSelectedSkillOptions] = useState([])
-  const [skillRatingMap, setSkillRatingMap] = useState({})
   const [skillRatingsMap, setSkillRatingsMap] = useState(new Map())
 
   const [isBackBtnDisabled, setIsBackBtnDisabled] = useState(true)
@@ -41,11 +40,9 @@ const GlobalProvider = ({ children }) => {
         nextBtnAction,
         selectedSkillOptions,
         skillOptions,
-        skillRatingMap,
         skillRatingsMap,
 
         setSkillRatingsMap,
-        setSkillRatingMap,
         setSkillOptions,
         setSelectedSkillOptions,
         setProviderName,
